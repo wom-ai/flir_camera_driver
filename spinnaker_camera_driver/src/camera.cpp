@@ -233,8 +233,8 @@ void Camera::setImageControlFormats(const spinnaker_camera_driver::SpinnakerConf
   // WARN: For BFS-U3-70S7C, changing the color coding lowers the camera fps from 50 -> 17
   // and the only way to recover the original fps was by factory resetting (changing back to
   // original value does not help). It also affects the SpinView_QT so maybe it is the hardware
-  // issue
-  //setProperty(node_map_, "PixelFormat", config.image_format_color_coding);
+  // issue. Factory value BayerRG8
+  setProperty(node_map_, "PixelFormat", config.image_format_color_coding);
 }
 
 void Camera::setGain(const float& gain)
